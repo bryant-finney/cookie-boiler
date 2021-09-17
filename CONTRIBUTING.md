@@ -55,7 +55,7 @@ development. Please note this documentation assumes you already have
 2. Clone your fork locally:
    ```bash
    $ cd path_for_the_repo
-   $ git clone git@github.com:YOUR_NAME/cookiecutter-pypackage.git
+   $ git clone git@github.com:YOUR_NAME/cookie-boiler.git
    ```
 3. Assuming you have virtualenv installed (If you have Python 3.6 this should
    already be there), you can create a new environment for your local
@@ -66,7 +66,7 @@ development. Please note this documentation assumes you already have
    ```
    This should change the shell to look something like:
    ```bash
-   (cookie-boiler-env) $
+   (.venv) $
    ```
 4. Create a branch for local development:
    ```bash
@@ -106,7 +106,7 @@ development. Please note this documentation assumes you already have
    ```bash
    $ git add .
    $ git commit -m "Your detailed description of your changes."
-   $ git push origin name-of-your-bugfix-or-feature
+   $ git push origin $branch_name
    ```
 10. Submit a pull request through the GitHub website.
 
