@@ -1,7 +1,7 @@
 # Cookie Boiler
 
 [![updates](https://pyup.io/repos/github/bryant-finney/cookie-boiler/shield.svg)](https://pyup.io/repos/github/bryant-finney/cookie-boiler/)
-[![build status](https://travis-ci.org/bryant-finney/cookie-boiler.svg?branch=master)](https://travis-ci.org/github/bryant-finney/cookie-boiler)
+[![build status](https://app.travis-ci.com/bryant-finney/cookie-boiler.svg?branch=master)](https://app.travis-ci.com/bryant-finney/cookie-boiler)
 [![doc status](https://readthedocs.org/projects/cookie-boiler/badge/?version=latest)](https://cookie-boiler.readthedocs.io/en/latest/?badge=latest)
 
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for a Python package.
@@ -13,7 +13,7 @@
 ## Features
 
 * Testing setup with `unittest` and `python setup.py test` or `pytest`
-* [Travis-CI](http://travis-ci.org/): Ready for Travis Continuous Integration testing
+* [Travis-CI](http://travis-ci.com/): Ready for Travis Continuous Integration testing
 * [Tox](http://testrun.org/tox/) testing: Setup to easily test for Python `3.6`, `3.7`, `3.8`, `3.9`
 * [Sphinx](http://sphinx-doc.org/) docs: Documentation ready for generation with, for example, [`Read the Docs`](https://readthedocs.io/)
 * [setuptools-scm](https://github.com/pypa/setuptools_scm/): Pre-configured for auto-versioning according to repo tags
@@ -25,7 +25,7 @@
 
 Linux:
 
-[![Linux build status on Travis CI](https://img.shields.io/travis/bryant-finney/cookie-boiler.svg)](https://travis-ci.org/bryant-finney/cookie-boiler)
+[![Linux build status on Travis CI](https://img.shields.io/travis/bryant-finney/cookie-boiler.svg)](https://app.travis-ci.com/bryant-finney/cookie-boiler)
 
 Windows:
 
