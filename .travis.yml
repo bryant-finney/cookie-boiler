@@ -2,6 +2,7 @@
 
 language: python
 python:
+  - 3.9
   - 3.8
   - 3.7
   - 3.6
@@ -21,5 +22,5 @@ deploy:
     secure: PLEASE_REPLACE_ME
   on:
     tags: true
-    repo: audreyr/python_boilerplate
+    repo: bryant-finney/cookie-boiler
     python: 3.8
