@@ -42,8 +42,7 @@ templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-# source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+source_suffix = [".rst", ".md"]
 
 # The encoding of source files.
 # source_encoding = 'utf-8-sig'
@@ -52,9 +51,9 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "cookiecutter-pypackage"
-copyright = "2015, Audrey Roy Greenfeld"
-author = "Audrey Roy Greenfeld"
+project = "cookie-boiler"
+copyright = "2015, Audrey Roy Greenfeld, 2021, Bryant Finney"
+author = "Bryant Finney"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -227,8 +226,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "cookiecutter-pypackage.tex",
-        "cookiecutter-pypackage Documentation",
+        "cookie-boiler.tex",
+        "cookie-boiler Documentation",
         "Audrey Roy Greenfeld",
         "manual",
     ),
@@ -262,8 +261,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "cookiecutter-pypackage",
-        "cookiecutter-pypackage Documentation",
+        "cookie-boiler",
+        "cookie-boiler Documentation",
         [author],
         1,
     )
@@ -281,11 +280,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "cookiecutter-pypackage",
-        "cookiecutter-pypackage Documentation",
+        "cookie-boiler",
+        "cookie-boiler Documentation",
         author,
-        "cookiecutter-pypackage",
-        "One line description of project.",
+        "cookie-boiler",
+        "A Cookiecutter boilerplate project.",
         "Miscellaneous",
     ),
 ]
