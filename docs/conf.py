@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# cookiecutter-pypackage documentation build configuration file, created by
+# cookie-boiler documentation build configuration file, created by
 # sphinx-quickstart on Sun Dec 13 09:13:01 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -205,7 +205,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "cookiecutter-pypackagedoc"
+htmlhelp_basename = "cookie-boilerdoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
