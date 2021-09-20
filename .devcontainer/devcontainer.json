@@ -11,7 +11,6 @@
   },
 
   "dockerFile": "Dockerfile",
-
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "ms-azuretools.vscode-docker",
@@ -47,7 +46,14 @@
     "visualstudioexptteam.vscodeintellicode",
     "redhat.vscode-yaml",
     "cssho.vscode-svgviewer",
-    "jock.svg"
+    "jock.svg",
+    "ms-python.vscode-pylance",
+    "ms-python.python",
+    "streetsidesoftware.code-spell-checker",
+    "ryanluker.vscode-coverage-gutters",
+    "executablebookproject.myst-highlight",
+    "njpwerner.autodocstring",
+    "littlefoxteam.vscode-python-test-adapter"
   ],
 
   "mounts": [
