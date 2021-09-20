@@ -34,4 +34,5 @@ CMD [ "sleep", "infinity" ]
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends neovim gnupg2 direnv exa httpie \
     python3-pip npm gnupg2 \
-    && npm install -g prettier
+    && npm install -g prettier \
+    && pip3 install -r requirements.dev.txt
