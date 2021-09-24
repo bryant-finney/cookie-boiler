@@ -32,6 +32,15 @@ ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
 CMD [ "sleep", "infinity" ]
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends neovim gnupg2 direnv exa httpie \
+    && apt-get -y install --no-install-recommends  make build-essential libssl-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+    zlib1g-dev neovim gnupg2 direnv exa httpie \
     python3-pip npm gnupg2 inotify-tools \
+    && pip install tox-pyenv \
     && npm install -g prettier
+
+ENV PYENV_ROOT=/home/vscode/.pyenv PATH="$PYENV_ROOT/bin:$PATH"
+RUN git clone https://github.com/pyenv/pyenv.git ~/.pyenv \
+    && export PYENV_ROOT=$HOME/.pyenv && export PATH="$PYENV_ROOT/bin:$PATH" \
+    && eval "$(pyenv init -)" \
+    && for version in 3.6.15 3.7.11 3.8.12 3.9.7; do pyenv install "$version"; done
