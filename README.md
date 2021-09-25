@@ -34,7 +34,7 @@ Linux:
 
 Windows:
 
-[![windows build status on appveyor](https://ci.appveyor.com/api/projects/status/github/bryant-finney/cookie-boiler?branch=master&svg=true)](https://ci.appveyor.com/project/bryant-finney/cookie-boiler/branch/master)
+[![windows build status on appveyor](https://ci.appveyor.com/api/projects/status/github/bryant-finney/cookie-boiler?branch=main&svg=true)](https://ci.appveyor.com/project/bryant-finney/cookie-boiler/branch/main)
 
 ## Quickstart
 
