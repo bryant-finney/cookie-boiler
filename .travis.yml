@@ -2,12 +2,13 @@
 
 language: python
 python:
+  - 3.9
   - 3.8
   - 3.7
   - 3.6
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox-travis
+install: pip install --upgrade -U pip tox-travis
 
 # command to run tests, e.g. python setup.py test
 script: tox
@@ -16,10 +17,10 @@ script: tox
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
-  user: audreyr
+  user: bryant-finney
   password:
     secure: PLEASE_REPLACE_ME
   on:
     tags: true
-    repo: audreyr/python_boilerplate
+    repo: bryant-finney/cookie-boiler
     python: 3.8
