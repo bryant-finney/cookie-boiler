@@ -1,7 +1,7 @@
-=====
-Usage
-=====
+# Usage
 
-To use {{ cookiecutter.project_name }} in a project::
+To use {mod}`{{ cookiecutter.project_name }}` in a project:
 
-    import {{ cookiecutter.project_slug }}
+```py
+import {{ cookiecutter.project_slug }}
+```

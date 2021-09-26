@@ -32,16 +32,39 @@ import {{ cookiecutter.project_slug }}
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.viewcode"]
+extensions = [
+    "myst_parser",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosectionlabel",
+    "sphinx.ext.coverage",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.linkcode",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.todo",
+    "sphinx.ext.viewcode",
+]
+
+# Prefix document path to section labels, to use:
+# `path/to/file:heading` instead of just `heading`
+autosectionlabel_prefix_document = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-#
-# source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+
+source_suffix = ['.rst', '.md']
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    "pylint": ("https://pylint.pycqa.org/en/latest/", None),
+    "pytest": ("https://docs.pytest.org/en/latest/", None),
+    "requests": ("https://docs.python-requests.org/en/master/", None),
+    "setuptools": (
+        "https://setuptools.readthedocs.io/en/latest/",
+        "https://setuptools.readthedocs.io/en/latest/objects.inv",
+    ),
+}
 
 # The master toctree document.
 master_doc = "index"
@@ -76,7 +99,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 pygments_style = "sphinx"
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
+todo_include_todos = True
 
 
 # -- Options for HTML output -------------------------------------------

@@ -1,1 +1,3 @@
-.. include:: ../AUTHORS.rst
+```{include} ../README.md
+:relative-docs: ./
+```

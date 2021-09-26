@@ -1,1 +1,3 @@
-.. include:: ../HISTORY.rst
+```{include} ../HISTORY.md
+:relative-docs: ./
+```

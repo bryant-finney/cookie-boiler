@@ -1,6 +1,8 @@
-#!/usr/bin/env python
+"""
+Perform tests for :mod:`{{cookiecutter.project_slug}}.cli`
 
-"""Tests for `{{ cookiecutter.project_slug }}` package."""
+.. moduleauthor:: {{ cookiecutter.full_name }} <{{ cookiecutter.email }}>
+"""
 
 {% if cookiecutter.use_pytest == 'y' -%}
 import pytest
@@ -11,7 +13,7 @@ import unittest
 from click.testing import CliRunner
 {%- endif %}
 
-from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
+from {{ cookiecutter.project_slug }} import __main__
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
 from {{ cookiecutter.project_slug }} import cli
 {%- endif %}

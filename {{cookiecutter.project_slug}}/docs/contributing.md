@@ -1,1 +1,3 @@
-.. include:: ../CONTRIBUTING.rst
+```{include} ../CONTRIBUTING.md
+:relative-docs: ./
+```

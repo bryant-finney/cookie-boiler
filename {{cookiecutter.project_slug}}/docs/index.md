@@ -1,10 +1,11 @@
-Welcome to {{ cookiecutter.project_name }}'s documentation!
-======================================
+# Welcome to {{ cookiecutter.project_name }}'s documentation!
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+## Outline
 
+```{toctree}
+---
+maxdepth: 2
+---
    readme
    installation
    usage
@@ -12,9 +13,10 @@ Welcome to {{ cookiecutter.project_name }}'s documentation!
    contributing
    {% if cookiecutter.create_author_file == 'y' -%}authors
    {% endif -%}history
+```
 
-Indices and tables
-==================
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+# Indices and tables
+
+- {ref}`genindex`
+- {ref}`modindex`
+- {ref}`search`

@@ -74,7 +74,6 @@ def test_bake_with_defaults(cookies):
         assert "setup.py" in found_toplevel_files
         assert "python_boilerplate" in found_toplevel_files
         assert "tox.ini" in found_toplevel_files
-        assert "tests" in found_toplevel_files
 
 
 def test_bake_and_run_tests(cookies):
@@ -141,18 +140,24 @@ def test_make_help(cookies):
 def test_using_pytest(cookies):
     with bake_in_temp_dir(cookies, extra_context={"use_pytest": "y"}) as result:
         assert result.project_path.is_dir()
-        test_file_path = result.project_path / "tests/test_python_boilerplate.py"
-        with open(test_file_path, "r") as test_file:
-            lines = test_file.readlines()
-        assert "import pytest" in "".join(lines)
+        test_file_path = (
+            result.project_path / "python_boilerplate" / "tests" / "test_cli.py"
+        )
+        with test_file_path.open() as test_file:
+            lines = [line.rstrip() for line in test_file.readlines()]
+        assert "import pytest" in lines
         # Test the new pytest target
-        run_inside_dir("pytest", str(result.project_path)) == 0
+        run_inside_dir(
+            "python -m pytest python_boilerplate", str(result.project_path)
+        ) == 0
 
 
 def test_not_using_pytest(cookies: Cookies):
     with bake_in_temp_dir(cookies, extra_context={"use_pytest": "n"}) as result:
         assert result.project_path.is_dir()
-        test_file_path = result.project_path / "tests/test_python_boilerplate.py"
+        test_file_path = (
+            result.project_path / "python_boilerplate" / "tests" / "test_cli.py"
+        )
         text = test_file_path.read_text()
         assert "import unittest" in text
         assert "import pytest" not in text
