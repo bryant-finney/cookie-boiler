@@ -53,11 +53,14 @@
     "ryanluker.vscode-coverage-gutters",
     "executablebookproject.myst-highlight",
     "njpwerner.autodocstring",
-    "littlefoxteam.vscode-python-test-adapter"
+    "littlefoxteam.vscode-python-test-adapter",
+    "gitlab.gitlab-workflow"
   ],
 
   "mounts": [
     "src=${localEnv:HOME}/.credentials,dst=/home/vscode/.credentials,type=bind,readonly",
+    "src=${localEnv:HOME}/.gitconfig,dst=/home/vscode/.gitconfig,type=bind,readonly",
+    "src=${localEnv:HOME}/.git_template,dst=/home/vscode/.git_template,type=bind,readonly",
     "src=${localEnv:HOME}/.p10k.zsh,dst=/home/vscode/.p10k.zsh,type=bind,readonly",
     "src=${localEnv:HOME}/.ssh,dst=/home/vscode/.ssh,type=bind,readonly",
     "src=${localEnv:HOME}/.vim,dst=/home/vscode/.vim,type=bind,readonly",
