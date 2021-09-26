@@ -1,0 +1,21 @@
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - if: $CI_COMMIT_BRANCH || $CI_COMMIT_TAG
+
+tox:
+  # execute `tox` environment tests
+  # ref: https://gitlab.freedesktop.org/mesa/piglit/-/blob/1087efe7da8312f8dd236f0a2051fdf67cc89bd6/.gitlab-ci.yml#L149
+  before_script:
+    - apk update >/dev/null && apk add --quiet gcc build-base linux-headers
+    - pip install tox
+  image: python:${PY_MAJOR}.${PY_MINOR}-alpine
+  needs: []
+  parallel:
+    matrix:
+      - PY_MAJOR: 3
+        PY_MINOR: [6, 7, 8, 9]
+  script:
+    - tox -e "py${PY_MAJOR}${PY_MINOR}"
+  stage: test
