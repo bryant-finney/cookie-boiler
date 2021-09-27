@@ -1,5 +1,4 @@
 coverage>=4.5.4
-flake8>=3.7.8
 myst-parser~=0.15.1
 pip>=19.2.3
 setuptools-scm
@@ -7,9 +6,18 @@ Sphinx>=3.1
 tox>=3.14.0
 twine>=1.14.0
 wheel>=0.33.6
+
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
 Click>=7.0{% endif %}
+{% if cookiecutter.use_black == 'y' -%}
+black~={{ cookiecutter.black_version }}{% endif %}
+{% if cookiecutter.use_flake8 == 'y' -%}
+flake8{% endif %}
+{% if cookiecutter.use_isort == 'y' -%}
+isort{% endif %}
+{% if cookiecutter.use_mypy == 'y' -%}
+mypy{% endif %}
+{% if cookiecutter.use_pylint == 'y' -%}
+pylint{% endif %}
 {% if cookiecutter.use_pytest == 'y' -%}
 pytest>=6.2.4{% endif %}
-{% if cookiecutter.use_black == 'y' -%}
-black~=21.9b0{% endif %}
