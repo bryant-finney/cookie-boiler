@@ -4,6 +4,7 @@ import shlex
 import subprocess
 import sys
 from contextlib import contextmanager
+from itertools import product
 
 import pytest
 import yaml
@@ -249,3 +250,18 @@ def test_black(cookies, use_black, expected):
         assert ("black" in requirements_path.read_text()) is expected
         makefile_path = result.project_path / "Makefile"
         assert ("black --check" in makefile_path.read_text()) is expected
+
+
+@pytest.mark.parametrize(
+    "extra_name,extra_value",
+    product(["flake8", "isort", "mypy", "pylint"], ["y", "n"]),
+)
+def test_use_pkgs(cookies: Cookies, extra_name: str, extra_value: str):
+    with bake_in_temp_dir(
+        cookies, extra_context={f"use_{extra_name}": extra_value}
+    ) as result:
+        assert result.project_path.is_dir()
+        with open(result.project_path / "requirements_dev.txt", "r") as f:
+            assert (extra_name in [line.rstrip("\n") for line in f.readlines()]) is (
+                extra_value == "y"
+            )
